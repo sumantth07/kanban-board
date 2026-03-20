@@ -555,7 +555,7 @@ export default function KanbanApp() {
   const addTask    = (task)    => setTasks(prev => [...prev, task]);
   const updateTask = (updated) => setTasks(prev => prev.map(t => t.id === updated.id ? updated : t));
   const deleteTask = (id)      => setTasks(prev => prev.filter(t => t.id !== id));
-  const resetBoard = ()        => { if (window.confirm("Reset board to defaults? All your tasks will be lost.")) setTasks(DEFAULT_TASKS); };
+  const resetBoard = ()        => { if (window.confirm("Clear all tasks? This cannot be undone.")) setTasks([]); };
 
   // ── Filter ───────────────────────────────────────────────────────────────
   const filtered = tasks.filter(t => {
